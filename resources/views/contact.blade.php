@@ -1,7 +1,7 @@
 @extends('layouts.default')
 @section('content')
-    <h1>
+    <h3>
         Contact me!
-    </h1>
+    </h3>
     <p>Work in progress</p>
 @stop

@@ -11,7 +11,7 @@
                             @endif
                             ">main</a></li>
                         <li class="nav-item"><a href="{{ route('projects-summary') }}" class="nav-link
-                             @if(Request::url() === route('projects-summary'))
+                             @if(Request::url() === route('projects-summary') || isset($project))
                                 active-link
                             @endif
                             ">projects</a></li>

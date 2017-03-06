@@ -15,13 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::get('projects/{id}', function ($id) {
-    return view('projects')->with('id', $id);
-});
+Route::get('project/{id}', 'ProjectController@show');
 
-Route::get('projects', function () {
-    return view('projects-summary');
-})->name('projects-summary');
+
+Route::get('projects', 'ProjectController@showsummary')->name('projects-summary');
 
 Route::get('contact', function () {
     return view('contact');
