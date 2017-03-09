@@ -28,7 +28,7 @@
     {{--*/ $max = $project->images->count() + $j /*--}}
     @for ($i = $j; $i < $max; $i++)
         
-        path[{{$i}}] = '<img name="slide" src="{{ route('home') }}/images/{{ $project->images->get($i - $j)->src }}" height="400"/> ';
+        path[{{$i}}] = '<img name="slide" src="{{ route('home') }}/images/{{ $project->images->get($i - $j)->src }}" onclick="next()" height="400"/> ';
         descriptions[{{$i}}] = "- {{ $project->images->get($i - $j)->description }}";   
     @endfor
     
@@ -38,7 +38,7 @@
         var navHtml = "";
         
         for(var i = 0; i < path.length; i++){
-            navHtml += ' <img src="{{ route('home') }}/images/icons/btn_white.png" onclick="selectImage(' + i + ')" class="slider-btn"/>';
+            navHtml += ' <img src="{{ route('home') }}/images/icons/btn_white.png" onclick="selectImage(' + i + ')" onclick="next()" class="slider-btn"/>';
             
         }
         document.getElementById("slider-nav").innerHTML = navHtml;

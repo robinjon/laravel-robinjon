@@ -1,0 +1,26 @@
+
+.projects-list{
+    margin-top:2rem;
+    margin-left: 0;
+}
+.projects-list-item{
+    list-style-type: none;
+    margin-left: -2rem;
+    margin-bottom: 2rem;
+}
+
+.projects-list-item div{
+    cursor: pointer;
+}
+
+.projects-list-item a:hover{
+    color: mix(black, $main-color, 25%)!important;//$main-color;
+}
+
+.projects-list-item a:link{
+    color: #000;
+}
+
+.projects-list-item a:visited{
+    color: #000;
+}

@@ -289,6 +289,9 @@ body {
   background: #333;
   padding: 0; }
 
+.slider-image img {
+  max-width: 100%; }
+
 .slider-image video {
   display: inline-block;
   margin: 0;
@@ -299,7 +302,6 @@ body {
   background: #333; }
 
 .slider-nav img {
-  max-width: 100%;
   min-height: 0.1rem;
   margin: 0;
   margin-top: 0.6rem;
@@ -317,5 +319,26 @@ body {
 .main-text {
   display: block;
   padding-bottom: 2rem !important; }
+
+.projects-list {
+  margin-top: 2rem;
+  margin-left: 0; }
+
+.projects-list-item {
+  list-style-type: none;
+  margin-left: -2rem;
+  margin-bottom: 2rem; }
+
+.projects-list-item div {
+  cursor: pointer; }
+
+.projects-list-item a:hover {
+  color: #3968bf !important; }
+
+.projects-list-item a:link {
+  color: #000; }
+
+.projects-list-item a:visited {
+  color: #000; }
 
 /*# sourceMappingURL=app.css.map */

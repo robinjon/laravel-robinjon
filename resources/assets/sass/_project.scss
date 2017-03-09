@@ -1,4 +1,4 @@
-$slider-background-color: #333;
+
 
 .project-list-item{
 }
@@ -26,6 +26,10 @@ $slider-background-color: #333;
     
 }
 
+.slider-image img{
+    max-width: 100%;    
+}
+
 .slider-image video{
     display: inline-block;
     margin:0;
@@ -37,7 +41,6 @@ $slider-background-color: #333;
     background:$slider-background-color;
 }
 .slider-nav img{
-    max-width: 100%;
     min-height: 0.1rem;
     margin: 0;
     margin-top: 0.6rem;

@@ -1,21 +1,21 @@
 @extends('layouts.default')
 @section('content')
-<div class="col-lg-12">
-    <h3>Projects</h3>
-            <p>Work in progress</p>
-<ul class="list-group">
-    @foreach ($projects as $project)
-    <li class="list-group-item">
-        <div class="project-list-item">
-        <h4><a href="project/{{ $project->id }}">{{ $project->title }}</a></h4>
-        <br>
-        <p>{{ str_limit($project->description, $limit = 60, $end = '...') }}</p>
-    </div>
-    </li>
 
+<h3>Projects</h3>
+<ul class="projects-list">
+    @foreach ($projects as $project)
+    <li class="projects-list-item">
+            <a href="project/{{ $project->id }}">
+        <div>
+                <h5>{{ $project->title }}</h5>
+                <p>{{ str_limit($project->description, $limit = 70, $end = '...') }}</p>
+        </div>
+            </a>
+    </li>
+@endforeach
 </ul>
     
-@endforeach
+
     
-    </div>
+    
 @stop
