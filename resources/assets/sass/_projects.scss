@@ -1,6 +1,62 @@
+$slider-background-color: #333;
+
 .project-list-item{
 }
 
 .list-group-item{
     margin: 1rem;
+}
+
+.slider{
+    display: block;
+    text-align: center;
+    padding: 0;
+    
+}
+
+.slider-btn{
+    margin-bottom: 1rem;
+    
+}
+
+.slider-image{
+    background: $slider-background-color;
+    
+    padding: 0;
+    
+}
+
+.slider-image video{
+    display: inline-block;
+    margin:0;
+    margin-top: 0.6rem;
+    padding:0; 
+}
+
+.slider-nav{
+    background:$slider-background-color;
+}
+.slider-nav img{
+    max-width: 100%;
+    min-height: 0.1rem;
+    margin: 0;
+    margin-top: 0.6rem;
+    padding: 0;
+    cursor: pointer;
+}
+.slider-description{
+    padding:0.3rem;
+    padding-top: 0.6rem;
+    background: $slider-background-color;
+    
+}
+.slider-description p{
+    color: #fff;
+    
+}
+
+.main-text{
+    display: block;
+    padding-bottom: 2rem !important;
+    
 }

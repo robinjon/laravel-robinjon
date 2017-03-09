@@ -17,9 +17,13 @@ class DatabaseSeeder extends Seeder
         $i = 0;
         
         // Jobbhistorie 1: Rapportgenerator
-        $description = "For å kvalitetssikre og effektivisere sertifikat genereringen lagede vi et program som rensket loggdata og regnet ut sensorens nøyaktighet. Dette programmet laget et sertifikat i PDF format.";
+        $description = "Late 2015 GE – Presens started production of a new type of sensor, creating a need for å flow-loop for testing these sensors. To achieve required flowrates we needed to implement a new water pump. I was tasked to build software for controlling the pump and creating an easy to use interface for the LabView software engineer responsible for the site.
+
+<h4>The technical side</h4> 
+The pump uses ModbusTCP for communication, I decided to build the control software using C# width an interface to LabView. I created my own ModbusTCP library, as I did not find an existing library fitting my requirements. The end result was a dll that I imported to LabView and created sub-VIs from.
+";
         DB::table('projects')->insert([
-	            'title' => 'Rapportgenerator',
+	            'title' => 'Driver for 130 KW water pump',
 	            'description' => $description,
 	            'gitlink' => null,
                 'priority' => $i,
@@ -36,5 +40,46 @@ class DatabaseSeeder extends Seeder
                 'priority' => $i,
 	        ]);
         }
+        
+        //Images
+        DB::table('images')->insert([
+	            'title' => 'Logic analyzer',
+	            'description' => 'Equpment on site',
+	            'src' => 'IMG_0035.JPG',
+	        ]);
+        DB::table('images')->insert([
+	            'title' => 'Lab Power supply',
+	            'description' => 'Equpment on site',
+	            'src' => 'IMG_0874.JPG',
+	        ]);
+        
+        
+        // Image pivot table
+        DB::table('image_project')->insert([
+	            'image_id' => 1,
+	            'project_id' => 2,
+	        ]);
+                DB::table('image_project')->insert([
+	            'image_id' => 2,
+	            'project_id' => 2,
+	        ]);
+        
+        
+        //Videos
+        DB::table('videos')->insert([
+	            'title' => '130 KW Water pump',
+	            'description' => 'Water pump controlled using my software',
+	            'src' => 'http://atiro.no/robinjon/images/IMG1323.mp4',
+                'youtube' => false,
+	        ]);
+        
+        // Videos pivot to projects
+        DB::table('project_video')->insert([
+	            'video_id' => 1,
+	            'project_id' => 1,
+            ]);
+        
+        
+        
     }
 }

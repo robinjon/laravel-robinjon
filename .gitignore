@@ -10,6 +10,13 @@
 *.rar
 *.tar
 *.zip
+*.JPG
+*.MOV
+*.ogg
+*.ts
+*.webm
+*.mp4
+
 
 # Logs and databases #
 ######################
