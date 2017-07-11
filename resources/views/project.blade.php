@@ -19,19 +19,22 @@
     // 
     @for ($j = 0; $j < $project->videos->count(); $j++)
         @if ($project->videos->get($j)->youtube)
+            path[{{$j}}] = '<iframe id="ytplayer" type="text/html" width="640" height="360" src="{{$project->videos->get($j)->src}}" frameborder="0"></iframe>';
+            descriptions[{{$j}}] = "<b>{{ $project->videos->get($j)->title }}:</b> {{ $project->videos->get($j)->description }}"; 
         @else
             path[{{$j}}] = '<video src="{{$project->videos->get($j)->src}}" autoplay mute height="385" controls></video> ';
-            descriptions[{{$j}}] = "- {{ $project->videos->get($j)->description }}";  
+            descriptions[{{$j}}] = "<b>{{ $project->videos->get($j)->title }}:</b> {{ $project->videos->get($j)->description }}";  
         @endif
         
     @endfor
-    {{--*/ $max = $project->images->count() + $j /*--}}
-    @for ($i = $j; $i < $max; $i++)
-        
-        path[{{$i}}] = '<img name="slide" src="{{ route('home') }}/images/{{ $project->images->get($i - $j)->src }}" onclick="next()" height="400"/> ';
-        descriptions[{{$i}}] = "- {{ $project->images->get($i - $j)->description }}";   
-    @endfor
-    
+    @if ($project->images->count() > 0)
+        {{--*/ $max = $project->images->count() + $j /*--}}
+        @for ($i = $j; $i < $max; $i++)
+
+            path[{{$i}}] = '<img name="slide" src="{{ route('home') }}/images/{{ $project->images->get($i - $j)->src }}" onclick="next()" height="400"/> ';
+            descriptions[{{$i}}] = "<b>{{ $project->images->get($i - $j)->title }}:</b> {{ $project->images->get($i - $j)->description }}";   
+        @endfor
+    @endif
 
     const init = () => {
         if(path.length > 1){

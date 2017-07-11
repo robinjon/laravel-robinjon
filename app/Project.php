@@ -13,7 +13,7 @@ class Project extends Model
         return $this->belongsToMany('App\Image');
     }
     
-        public function videos()
+    public function videos()
     {
         return $this->belongsToMany('App\Video');
     }

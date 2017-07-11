@@ -5,11 +5,11 @@
              <div clas="menu-container">
                  <div class="menu">
                     <ul class="nav nav-pills menu">
-                        <li  class="nav-item"><a href="{{ route('home') }}/" class="nav-link 
+                        <!--<li  class="nav-item"><a href="{{ route('home') }}/" class="nav-link 
                             @if(Request::url() === route('home'))
                                 active-link
                             @endif
-                            ">main</a></li>
+                            ">main</a></li>-->
                         <li class="nav-item"><a href="{{ route('projects-summary') }}" class="nav-link
                              @if(Request::url() === route('projects-summary') || isset($project))
                                 active-link

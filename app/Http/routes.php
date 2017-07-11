@@ -12,10 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('projects');
 })->name('home');
 
 Route::get('project/{id}', 'ProjectController@show');
+Route::get('api', 'ApiController@showAll');
+Route::get('api/{id}', 'ApiController@show');
 
 
 Route::get('projects', 'ProjectController@showsummary')->name('projects-summary');
